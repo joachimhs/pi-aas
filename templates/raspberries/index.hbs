@@ -1,0 +1,26 @@
+<h1>Raspberry Pis!</h1>
+
+<table class="table">
+    <tr>
+        <th>DeviceId</th>
+        <th>Installed Version</th>
+        <th>Online</th>
+        <th>Projects</th>
+        <th>Actions</th>
+    </tr>
+    {{#each pi in controller}}
+        <tr>
+            <td>{{pi.id}}</td>
+            <td>{{pi.installedVersion}}</td>
+            <td>{{pi.online}}</td>
+            <td>{{pi.projects.length}}</td>
+            <td>{{link-to "Open" "raspberries.raspberry" pi tagName="button" classNames="btn btn-default"}}</td>
+        </tr>
+    {{else}}
+        <tr>
+            <td colspan="3">
+                <div class="text-center">There are no Raspberry Pis registered to your account!</div>
+            </td>
+        </tr>
+    {{/each}}
+</table>

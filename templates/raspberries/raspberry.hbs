@@ -1,0 +1,16 @@
+{{link-to "&lt; Back" "raspberries" tagName="button" classNames="btn btn-default"}}
+
+<h1>{{id}}</h1>
+
+<h2>Projects</h2>
+
+<ul class="nav nav-tabs nav-justified">
+    {{#each project in projects}}
+        {{#link-to "raspberries.raspberry.project" model project tagName="li"}}
+            <a href="#">{{project.id}}</a>
+        {{/link-to}}
+    {{/each}}
+</ul>
+
+
+{{outlet}}

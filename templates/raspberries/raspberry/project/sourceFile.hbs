@@ -1,0 +1,10 @@
+{{#if model.content}}
+    {{codemirror-textarea value=model.content}}
+{{/if}}
+
+<hr>
+
+{{#if model.isDirty}}
+    <button class="btn btn-primary form-control" {{action "doSaveFile"}}>Save</button>
+    <button class="btn btn-default form-control" {{action "doRollbackFile"}}>Cancel</button>
+{{/if}}

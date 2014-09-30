@@ -1,0 +1,21 @@
+<div class="row">
+    <div class="col-md-4">
+        {{#if creatingFile}}
+            {{input type="text" value=controller.newFilename placeholder="New filename" classNames="form-control"}}
+            <button class="btn btn-primary" {{action "createNewFile"}}>Create</button>
+            <button class="btn btn-default" {{action "cancelFileCreate"}}>Cancel</button>
+        {{else}}
+            <button class="btn btn-default form-control" {{action "toggleCreateFile"}}>Create New File</button>
+        {{/if}}
+
+
+        <div class="list-group">
+            {{#each sourceFile in sourceFiles}}
+                {{link-to sourceFile.id "raspberries.raspberry.project.sourceFile" model sourceFile classNames="list-group-item" tagName="a"}}
+            {{/each}}
+        </div>
+    </div>
+    <div class="col-md-8">
+        {{outlet}}
+    </div>
+</div>
